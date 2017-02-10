@@ -1,0 +1,48 @@
+<!-- Sangwa is Tibetian for Secret -->
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <!-- Libraries -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="sangwa.min.js"></script>
+
+    <title>Sangwa Encoder</title>
+
+    <style>
+    body{
+      width: 500px;
+      margin: auto;
+    }
+    </style>
+
+    <script type="text/javascript">
+      function convert(){
+        $('#to')[0].value = sangwa.to($('#from')[0].value);
+      }
+
+      function revert(){
+        $('#from')[0].value = sangwa.from($('#to')[0].value);
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="page-header">
+      <h1>Sangwa <small>Text-encoder</small></h1>
+    </div>
+
+    <div class="input-group">
+      <input type="text" id="from" class="form-control" placeholder="" aria-describedby="basic-addon1">
+      <span class="input-group-btn"><button class="btn btn-primary" onclick="convert();">Convert</button></span>
+    </div>
+    <br>
+    <div class="input-group">
+      <input type="text" id="to" class="form-control" placeholder="" aria-describedby="basic-addon1">
+      <span class="input-group-btn"><button class="btn btn-primary" onclick="revert();">Revert</button></span>
+    </div>
+  </body>
+</html>
