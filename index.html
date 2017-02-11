@@ -8,7 +8,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <script src="sangwa.min.js"></script>
+    <script src="sangwa.js"></script>
 
     <title>Sangwa Encoder</title>
 
@@ -27,6 +27,14 @@
       function revert(){
         $('#from')[0].value = sangwa.from($('#to')[0].value);
       }
+
+      function compress(){
+        $('#to')[0].value = sangwa.compress($('#from')[0].value);
+      }
+
+      function decompress(){
+        $('#from')[0].value = sangwa.decompress($('#to')[0].value);
+      }
     </script>
   </head>
 
@@ -37,12 +45,18 @@
 
     <div class="input-group">
       <input type="text" id="from" class="form-control" placeholder="" aria-describedby="basic-addon1">
-      <span class="input-group-btn"><button class="btn btn-primary" onclick="convert();">Convert</button></span>
+      <span class="input-group-btn">
+        <button class="btn btn-primary" onclick="convert();">Convert</button>
+        <button class="btn btn-success" onclick="compress();">Compress</button>
+      </span>
     </div>
     <br>
     <div class="input-group">
       <input type="text" id="to" class="form-control" placeholder="" aria-describedby="basic-addon1">
-      <span class="input-group-btn"><button class="btn btn-primary" onclick="revert();">Revert</button></span>
+      <span class="input-group-btn">
+        <button class="btn btn-primary" onclick="revert();">Revert</button>
+        <button class="btn btn-success" onclick="decompress();">Decompress</button>
+      </span>
     </div>
   </body>
 </html>

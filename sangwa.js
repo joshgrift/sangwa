@@ -45,3 +45,29 @@ sangwa.from = function(value){
 
   return result;
 }
+
+sangwa.compress = function(value){
+  var result = "";
+
+  var rand = Math.floor(Math.random() * 6) + 2;
+
+  value = "A" + value;
+
+  for(var i = 0; i < value.length; i++){
+    result += (String.fromCharCode(value[i].charCodeAt() - rand));
+  }
+
+  return result;
+}
+
+sangwa.decompress = function(value){
+  var result = "";
+
+  var rand = parseInt(65 - value[0].charCodeAt());
+
+  for(var i = 1; i < value.length; i++){
+    result += (String.fromCharCode(value[i].charCodeAt() + rand));
+  }
+
+  return result;
+}
