@@ -20,32 +20,12 @@
     </style>
 
     <script type="text/javascript">
-      function convert(){
-        $('#to')[0].value = sangwa.to($('#from')[0].value);
+      function encode(){
+        $('#to')[0].value = sangwa.encode($('#from')[0].value);
       }
 
-      function revert(){
-        $('#from')[0].value = sangwa.from($('#to')[0].value);
-      }
-
-      function compress(){
-        $('#to')[0].value = sangwa.compress($('#from')[0].value);
-      }
-
-      function decompress(){
-        $('#from')[0].value = sangwa.decompress($('#to')[0].value);
-      }
-
-      function zip(){
-        if($('#from')[0].value.length > 10000){
-          alert('Max character length is 10000');
-        } else {
-          $('#to')[0].value = sangwa.zip($('#from')[0].value);
-        }
-      }
-
-      function unzip(){
-        $('#from')[0].value = sangwa.unzip($('#to')[0].value);
+      function decode(){
+        $('#from')[0].value = sangwa.decode($('#to')[0].value);
       }
     </script>
   </head>
@@ -56,21 +36,23 @@
     </div>
 
     <div class="input-group">
-      <input type="text" id="from" class="form-control" placeholder="" value="i don't know. know." aria-describedby="basic-addon1">
+      <input type="text" id="from" class="form-control" placeholder="value" value="" aria-describedby="basic-addon1">
       <span class="input-group-btn">
-        <button class="btn btn-primary" onclick="convert();">Convert</button>
-        <button class="btn btn-danger" onclick="zip();">Zip</button>
-        <button class="btn btn-success" onclick="compress();">Compress</button>
+        <button class="btn btn-success" onclick="encode();">Encode</button>
       </span>
     </div>
     <br>
     <div class="input-group">
-      <input type="text" id="to" class="form-control" placeholder="" aria-describedby="basic-addon1">
+      <input type="text" id="to" class="form-control" placeholder="fND'OT" aria-describedby="basic-addon1">
       <span class="input-group-btn">
-        <button class="btn btn-primary" onclick="revert();">Revert</button>
-        <button class="btn btn-danger" onclick="unzip();">Unzip</button>
-        <button class="btn btn-success" onclick="decompress();">Decompress</button>
+        <button class="btn btn-danger" onclick="decode();">Decode</button>
       </span>
+    </div>
+
+    <div style="margin-top: 50px;" class="well">
+      View on <a href="https://github.com/dotjersh/sangwa/">Github</a><br>
+      Download: <a href="https://raw.githubusercontent.com/dotjersh/sangwa/master/sangwa.js">Source</a> | <a href="https://raw.githubusercontent.com/dotjersh/sangwa/master/sangwa.min.js">Minified</a><br>
+      Created by: <a href="https://dotjersh.github.io/">DotJersh</a><br>
     </div>
   </body>
 </html>
