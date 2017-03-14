@@ -2,7 +2,7 @@
 /* DotJersh.GitHub.io/sangwa/ */
 
 var sangwa = {
-  array: "~!1@2#3$4%5^6&7*8(9)0_-=+  qQwWeErRtTyYuUiIoOpP[{]}\\|aAsSdDfFgGhHjJkKlL;:\"'zZxXcCvVbBnNmM,<.>/?",
+  array: "~!1@2#3$4%5^6&7*8(9)0_-=+ qQwWeErRtTyYuUiIoOpP[{]}\\|aAsSdDfFgGhHjJkKlL;:\"'zZxXcCvVbBnNmM,<.>/?",
   key: function(value){
     var a = this.array + this.array;
     if(typeof value === "string"){
