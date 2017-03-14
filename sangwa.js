@@ -14,7 +14,7 @@ var sangwa = {
         return a[this.array.length + value];
       }
     } else {
-      return this.array + this.array;
+      return (this.array + this.array).split('');
     }
   }
 }
