@@ -20,14 +20,23 @@
     </style>
 
     <script type="text/javascript">
-      function encode(){
-        $('#to')[0].value = sangwa.encode($('#from')[0].value);
-      }
 
-      function decode(){
-        $('#from')[0].value = sangwa.decode($('#to')[0].value);
-      }
+	  $(document).ready(() => {
+
+	    // encode
+	    $(".btn-success").click(() => {
+	      $('#to')[0].value = sangwa.encode($('#from')[0].value);
+	    })
+
+	    // decode
+	    $(".btn-danger").click(() => {
+	      $('#from')[0].value = sangwa.decode($('#to')[0].value);
+	    })
+
+	  });
+
     </script>
+
   </head>
 
   <body>
